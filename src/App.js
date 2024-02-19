@@ -7,6 +7,41 @@ import './App.css';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 
+const returnClarifaiJSONRequest = (imageUrl) => {
+    const PAT = '3dcc9a350c6a47939d302dfe2a001482';
+    const USER_ID = 's-x-p-g-t-v-l-w-u-y';    
+    const APP_ID = 'face-recognition-app';
+    const MODEL_ID = 'face-detection';   
+    const IMAGE_BYTES_STRING = imageUrl;
+
+    const raw = JSON.stringify({
+        "user_app_id": {
+            "user_id": USER_ID,
+            "app_id": APP_ID
+        },
+        "inputs": [
+            {
+                "data": {
+                    "image": {
+                        "base64": IMAGE_BYTES_STRING
+                    }
+                }
+            }
+        ]
+    });
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Key ' + PAT
+        },
+        body: raw
+    };
+
+    return requestOptions;
+}
+
 const particlesOptions = {
     "fullScreen": {
         "enable": true,
@@ -155,6 +190,24 @@ const particlesOptions = {
 };
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            input: '',
+        }
+    }
+
+    onInputChange = (event) => {
+        console.log(event.target.value);
+    }
+
+    onButtonSubmit = () => {
+        fetch("https://api.clarifai.com/v2/models/" + "/outputs", returnClarifaiJSONRequest(this.state.input))
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
+
     particlesInit = async engine => {
         await loadSlim(engine);
     };
@@ -170,7 +223,10 @@ class App extends Component {
                 <Navigation/>
                 <Logo/>
                 <Rank/>
-                <ImageLinkForm/>
+                <ImageLinkForm 
+                    onInputChange={this.onInputChange}
+                    onButtonSubmit={this.onButtonSubmit}
+                />
                 {/*<FaceRecognition/>*/}
             </div>
         );
