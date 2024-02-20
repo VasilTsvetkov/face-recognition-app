@@ -5,8 +5,6 @@ import Logo from './components/Logo/Logo.js';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm.js';
 import Rank from './components/Rank/Rank.js';
 import './App.css';
-import Particles from 'react-tsparticles';
-import { loadSlim } from 'tsparticles-slim';
 
 const MODEL_ID = 'face-detection'; 
 
