@@ -80,10 +80,6 @@ class App extends Component {
         .catch(error => console.log(error));
     }
 
-    particlesInit = async engine => {
-        await loadSlim(engine);
-    };
-
     render() {
         return (
             <div className="App">
