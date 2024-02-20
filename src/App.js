@@ -83,11 +83,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Particles
-                    className="tsparticles"
-                    init={this.particlesInit}
-                    options={particlesOptions}
-                />
                 <Navigation/>
                 <Logo/>
                 <Rank/>
