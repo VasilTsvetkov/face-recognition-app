@@ -234,7 +234,7 @@ class App extends Component {
 
     this.setState({imageUrl: this.state.input, isDetected: true});
     
-    fetch('http://localhost:3000/imageurl', {
+    fetch('https://face-recognition-app-api-is5l.onrender.com/imageurl', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -248,7 +248,7 @@ class App extends Component {
         if (response) {
             const detectedFacesCount = this.calculateFaceLocation(response).length;
 
-            fetch('http://localhost:3000/image', {
+            fetch('https://face-recognition-app-api-is5l.onrender.com/image', {
                 method: 'put',
                 headers: {
                     'Content-Type': 'application/json'
