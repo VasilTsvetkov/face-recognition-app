@@ -1,6 +1,6 @@
 # Face Recognition App
 
-Welcome to the Face Recognition App! This is a full-stack web application built with React.js for the frontend, Express.js for the backend, PostgreSQL for the database, and uses Clarifai's face detection AI model.
+Welcome to the Face Recognition App! This is a full-stack web application built with React.js for the front end, Express.js for the back end, PostgreSQL for the database, and uses Clarifai's face detection AI model.
 
 ![image](https://github.com/VasilTsvetkov/face-recognition-app/assets/84472315/d83bfb15-fc5a-4c89-9ce7-f4fc96ffeecc)
 
@@ -8,19 +8,19 @@ Welcome to the Face Recognition App! This is a full-stack web application built 
 
 The Face Recognition App allows users to upload images containing faces and detect and recognize them within those images using Clarifai's face detection AI model. Users can register, sign in, upload images, and view the results of face recognition on the uploaded images.
 
-## Backend Repository
+## Back End Repository
 
-The backend for this project is hosted in a separate repository. You can find the code and more information [here](https://github.com/VasilTsvetkov/face-recognition-app-api).
+The back end for this project is hosted in a separate repository. You can find the code and more information [here](https://github.com/VasilTsvetkov/face-recognition-app-api).
 
 ## Technologies Used
 
-### Frontend
+### Front End
 
 - **HTML5**
 - **CSS3**
 - **React.js**
 
-### Backend
+### Back End
 
 - **Node.js**
 - **Express.js**
