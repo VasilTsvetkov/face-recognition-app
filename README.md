@@ -8,6 +8,10 @@ Welcome to the Face Recognition App! This is a full-stack web application built 
 
 The Face Recognition App allows users to upload images containing faces and detect and recognize them within those images using Clarifai's face detection AI model. Users can register, sign in, upload images, and view the results of face recognition on the uploaded images.
 
+## Backend Repository
+
+The backend for this project is hosted in a separate repository. You can find the code and more information [here](https://github.com/VasilTsvetkov/face-recognition-app-api).
+
 ## Technologies Used
 
 ### Frontend
